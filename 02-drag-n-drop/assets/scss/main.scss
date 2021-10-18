@@ -7,11 +7,34 @@
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #e5e5e5;
-  display: flex;
-  padding-top: 5rem;
-  justify-content: center;
-  overflow: hidden;
   margin: 0;
+}
+
+.menu{
+  display: flex;
+  justify-content: space-around;
+  &__item{
+    list-style-type: none;
+    border-bottom: 1px solid transparent;
+    -webkit-transition: border .5s ease-in-out;
+    -moz-transition: border .5s ease-in-out;
+    -o-transition: border .5s ease-in-out;
+    transition: border .5s ease-in-out;
+      a{
+          text-decoration: none;
+          color: rgb(0, 0, 0);
+      }
+      &:hover{
+         border-color: #111;
+      }
+  }
+}
+
+.drag-n-drop{
+  max-width: 800px;
+  display: flex;
+  justify-content: center;
+  margin: 15vh auto 0;
 }
 
 .row {
@@ -61,4 +84,17 @@ body {
 
 .done {
   background: linear-gradient(90deg, #84fab0 0%, #8fd3f4 100%);
+}
+
+.active{
+  border: 2px solid rgb(214, 174, 174);
+}
+
+.hide{
+  display: none;
+}
+
+.hovered{
+  border: 1px dashed #111;
+  border-radius: 20px;
 }
