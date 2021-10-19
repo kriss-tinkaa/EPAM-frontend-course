@@ -1,38 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Muli&display=swap'); 
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Muli', sans-serif;
-  overflow: hidden;
-  margin: 0;
-  background-color: #111;
-  height: 100vh;
-}
-
-.container{
-    width: calc(100% - 20px);
-    margin: 0 auto;
-}
-
-.menu{
-    display: flex;
-    justify-content: space-around;
-    &__item{
-        a{
-            text-decoration: none;
-            color: #fff;
-        }
-    }
-}
-
 .slides{
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
     &-wrap{
         width: 100%;
         display: flex;
