@@ -49,32 +49,44 @@ window.addEventListener("DOMContentLoaded", ()=>{
         sectionNameHolder[thisIndex].innerHTML = thisSectionName;
     })
 
-    /* ADDING ACTIVE CLASS FOR DOTS  */
+   
+    /* ADDING DOTS */
+    // window.addEventListener('scroll', () => {
+    //     let scrollDistance = window.scrollY;
+        //console.log(scrollDistance);
+        // document.querySelectorAll('.section').forEach((el, i) => {
+        //     if (el.offsetTop - document.querySelector('aside').clientHeight <= scrollDistance){
+        //         document.querySelectorAll('.dot').forEach((el) => {
+        //             if(el.classList.contains('active')){
+        //                 el.classList.remove('active');
+        //             }
+        //         })
+        //         document.querySelectorAll('.dot')[i].classList.add('active');
+        //     }
+        // });
+    // })
 
-    // let dots = document.querySelectorAll('.navDot');
-    // dots.onclick = function addClass(elem){
+    // let dot = document.querySelector('.dots');
+    // dot.addEventListener('click', function() {
+    //     this.classList.add('.active');
+    // })
+     
+    let sUsrAg = navigator.userAgent;
+    if (!(sUsrAg.indexOf("Firefox") > -1)) {
+        var canScroll = true;
+        var scrollContainer = document.querySelector('html')
+        scrollContainer.addEventListener('wheel', function(e) {
+        if (canScroll) {
+            scrollContainer.scrollBy(0, e.deltaY);
+            canScroll = false;
+            setTimeout(() => {
+                canScroll = true;
+            }, 800);
+        }
+        e.preventDefault();
+        }, { passive: false });
+    }
     
-    //     dots.forEach((dot) => {
-    //         dot.classList.remove('active');
-    //     })
-    // }
-
-    window.addEventListener('scroll', () => {
-        let scrollDistance = window.scrollY;
-
-        console.log(scrollDistance);
-        document.querySelectorAll('.section').forEach((el, i) => {
-            if (el.offsetTop - document.querySelector('aside').clientHeight <= scrollDistance){
-                document.querySelectorAll('dot').forEach((el) => {
-                    if(el.classList.contains('active')){
-                        el.classList.remove('active');
-                    }
-                })
-            }
-            document.querySelectorAll('.dot').classList.add('active');
-        })
-
-    })
 
     /* SECTION 1 */
 
