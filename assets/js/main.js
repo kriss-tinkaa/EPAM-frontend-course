@@ -31,9 +31,9 @@ window.addEventListener("DOMContentLoaded", ()=>{
         section.setAttribute('id', `${index}`);
     })
 
-    // sectionWrappers.forEach((section, index) =>{
-    //     section.setAttribute('data-number', `${index}`);
-    // })
+    sections.forEach((section, index) =>{
+        section.setAttribute('data-number', `${index}`);
+    })
  
     anchorLinks.forEach((link, index) =>{
         link.setAttribute('href', `#${index}`);
@@ -50,26 +50,30 @@ window.addEventListener("DOMContentLoaded", ()=>{
     })
 
    
-    /* ADDING DOTS */
-    // window.addEventListener('scroll', () => {
-    //     let scrollDistance = window.scrollY;
-        //console.log(scrollDistance);
-        // document.querySelectorAll('.section').forEach((el, i) => {
-        //     if (el.offsetTop - document.querySelector('aside').clientHeight <= scrollDistance){
-        //         document.querySelectorAll('.dot').forEach((el) => {
-        //             if(el.classList.contains('active')){
-        //                 el.classList.remove('active');
-        //             }
-        //         })
-        //         document.querySelectorAll('.dot')[i].classList.add('active');
-        //     }
-        // });
-    // })
+    /* ADDING CLASS ACTIVE FOR DOTS */
 
-    // let dot = document.querySelector('.dots');
-    // dot.addEventListener('click', function() {
-    //     this.classList.add('.active');
-    // })
+    const optionsObserver = {
+        root: null,
+        threshold: .5,
+    }
+
+    const sectionsObserver = new IntersectionObserver( sections =>{
+        sections.forEach(section => {
+            let thisSection = section.target;
+            let thisIndex = Number(thisSection.dataset.number);
+            if(section.isIntersecting){
+                console.log(thisIndex);
+                navDots.forEach(dot =>{
+                    dot.classList.remove('active');
+                })
+                navDots[thisIndex].classList.add('active');
+            }
+        })
+    }, optionsObserver);
+
+    sections.forEach(section =>{
+        sectionsObserver.observe(section)
+    })
      
     let sUsrAg = navigator.userAgent;
     if (!(sUsrAg.indexOf("Firefox") > -1)) {
