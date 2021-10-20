@@ -14,19 +14,34 @@ aside{
     flex-direction: column;
     height: 100%;
     padding: 50px 10px;
+    span{
+        opacity: 0;
+    }
 }
 .dot{
     transition: all 500ms ease;
     margin-bottom: 30px;
     position: relative;
     
-    &:not(:last-child):after{
+    &:after{
         content: "";
         position: absolute;
         height: calc(100% - 5px);
         width: 1px;
         left: 18px;
         background-color: #022057;
+    }
+    &:last-child{
+        margin-bottom: 0;
+        width: 50px;
+        height: 50px;
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        &:after{
+            height: calc(100% - 35px);
+            top: 0;
+        }
     }
     &.active{
         flex: 1;
