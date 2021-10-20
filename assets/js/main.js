@@ -158,6 +158,8 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
     }
 
+    /* SECTION 3 */
+
 
     
 
