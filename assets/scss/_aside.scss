@@ -58,6 +58,7 @@ aside{
         flex: 1;
         a{
             background-color: #ff85e4;
+            border-color: #ff85e4;
         }
     }
     &:hover{
@@ -71,7 +72,8 @@ aside{
         color: #022057;
         width: 35px;
         height: 35px;
-        background-color: #ff85e4;
+        background-color: #ffffff;
+        border: 1px solid #022057;
         border-radius: 50px;
         text-decoration: none;
         transition: all 0.3s ease-in;

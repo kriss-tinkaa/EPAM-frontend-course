@@ -1,0 +1,18 @@
+
+.square-wrap{
+    @include d-flex(center,center);
+    flex-wrap: wrap;
+    max-width: 400px;
+}
+
+.square{
+    width: 16px;
+    height: 16px;
+    background-color: rgba(107, 225, 255, 0.329);
+    margin: 2px;
+    box-shadow: 0 0 2px rgba(107, 225, 255, 0.596);
+    transition: .2s ease;
+    &:hover{
+        transition-delay: 0;
+    }
+}

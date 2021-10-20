@@ -4,6 +4,7 @@
 @import './aside';
 @import './slides';
 @import './drag-n_drop';
+@import './board-game';
 
 
 html{
@@ -42,6 +43,9 @@ body{
     }
     &--game{
         background-color: rgba(255, 161, 107, 0.596);
+    }
+    &--board{
+        background-color: rgba(107, 225, 255, 0.596);
     }
 }
 
