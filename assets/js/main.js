@@ -160,9 +160,32 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
     /* SECTION 3 */
 
+    const board = document.querySelector('#board');
+    const SQUARES_NUMBER = 500;
+    const colors = ['#e74c3c', '#8e44ad', '#3498db', '#e67e22', '#2ecc71']
 
+    for(let i = 0; i < SQUARES_NUMBER; i++){
+        const square = document.createElement('div');
+        square.classList.add('square');
+
+        square.addEventListener('mouseover', () =>  setColor(square));
     
+        square.addEventListener('mouseleave', () =>  setInterval(removeColor(square), 10060));
 
+        board.append(square);
+    }
 
+    function setColor(elem) {
+        const color = getRandomColor()
+        elem.style.backgroundColor = color;
+    }
+    function removeColor(elem) {
+        elem.style.backgroundColor = 'rgba(107, 225, 255, 0.329)';
+    }
+
+    function getRandomColor() {
+        const index = Math.floor(Math.random() * colors.length);
+        return colors[index];
+    }
 
 })
