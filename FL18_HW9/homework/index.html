@@ -26,13 +26,12 @@
         </div>
 
     </div>
-
     <div id="task2">
         <form action="" id="form">
-            <div class="title">Get Started</div>
+            <div class="title">Type your number</div>
 
             <div class="input-control">
-                <label for="phone" id="label-phone"></label>
+                <label for="phone" id="label-phone">Type phone number in next format - +380*********</label>
                 <input type="tel" name="phone" id="phone" phone="[0-9]{3} - [0-9]{2} - [0-9]{3}" placeholder="Type phone number in next format - +380*********">
             </div>
             <button id="btn" type="button" disabled>Submit</button>
@@ -41,8 +40,16 @@
     </div>
 
     <div id="task3">
-        <!-- TEMPLATE FOR TASK 3 GOES HERE -->
 
+        <div id="ball"></div>
+    </div>
+    <div class="teams">
+        <div>
+            Team A: <span id="teams-A"></span>
+        </div>
+        <div>
+            Team B: <span id="teams-B"></span>
+        </div>
     </div>
 
     <script src="./index.js"></script>
