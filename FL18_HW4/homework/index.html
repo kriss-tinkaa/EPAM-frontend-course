@@ -1,12 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Data types</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Data types</title>
 </head>
+
 <body>
-  <script src="app.js"></script>
+    <pre>
+    function reverseNumber(num) {
+      return String(num).split('').reverse().join('');
+    }
+    
+    function forEach(arr, func) {
+        for(let i = 0; i <= arr.length; i++){
+            func(arr[i]);
+        }
+    }
+    
+    function map(arr, func) {
+        for(let i = 0; i <= arr.length; i++){
+            func(arr[i] + 3);
+        }
+    }
+  </pre>
+    <script src="app.js"></script>
 </body>
+
 </html>

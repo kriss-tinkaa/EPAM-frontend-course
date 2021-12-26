@@ -1,12 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>HW_6</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HW_6</title>
 </head>
+
 <body>
-  <script src="js/pipe.js"></script>
+    <pre>
+      const pipe = (value, ...funcs) => {
+
+        let newValue = value;
+        for (let i = 0; i < funcs.length; i++) {
+            if (typeof funcs[i] === 'function') {
+                newValue = funcs[i](newValue);
+            } else {
+                return `Provided argument at position ${i} is not a function!`
+            }
+        }
+        return newValue;
+    };
+    
+    const replaceUnderscoreWithSpace = (value) => value.replace(/_/g, ' ');
+    const capitalize = (value) =>
+        value
+        .split(' ')
+        .map((val) => val.charAt(0).toUpperCase() + val.slice(1))
+        .join(' ');
+    const appendGreeting = (value) => `Hello, ${value}!`;
+    
+    const error = pipe('john_doe', replaceUnderscoreWithSpace, capitalize, '');
+    
+    //alert(error); // Provided argument at position 2 is not a function!
+    
+    const result = pipe('john_doe', replaceUnderscoreWithSpace, capitalize, appendGreeting);
+    
+    alert(result); // Hello, John Doe!
+  </pre>
+    <script src="js/pipe.js"></script>
 </body>
+
 </html>
